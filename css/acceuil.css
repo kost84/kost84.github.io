@@ -1,0 +1,42 @@
+body {
+ font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+ line-height: 1.6;
+ color: #2c3e50; 
+}
+
+.titre {
+  background-color: #ffff;
+  font: 1.5em sans-serif;
+  display: flex;
+  text-align: center;
+  justify-content: center
+}
+
+.acceuil {
+ background-color: rgba(241, 252, 252, 0.733);
+ border-collapse: collapse;
+ width: 100%;
+ border: 2px solid black;
+}
+
+main {
+ max-width: 900px; 
+ margin: 0 auto; 
+ padding: 20px 40px; 
+}
+
+.separator-dotted {
+ border-top: 2px dotted #666;
+  margin: 20px 0;
+}
+
+.contact {
+    background-color: #e2e8f0;
+    padding: 5px 15px;
+    border-radius: 20px; 
+    font-size: 0.9em;
+}
+
+a {
+    color: inherit;
+}
