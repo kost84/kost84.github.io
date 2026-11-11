@@ -1,0 +1,49 @@
+body  {
+    background-image: url(../imageetdoc/arriereplan/indexa.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: auto;
+}
+
+.titre {
+    color: aliceblue;
+    font-size: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 35vh
+    
+}
+
+.paragrapheinfo1 {
+    color: aliceblue;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -60px;
+}
+
+.paragrapheinfo2 {
+    color: aliceblue;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -60px;
+}
+
+.bouton-portfolio {
+ display: block;
+    width: fit-content;
+    margin: 40px auto 0 auto;
+    padding: 15px 30px; 
+    background-color: transparent;
+    color: aliceblue;
+    font-size: 25px;
+    font-family: Arial, sans-serif; 
+    text-decoration: none; 
+    border: 2px solid aliceblue; 
+    border-radius: 8px; 
+    cursor: pointer;
+}
