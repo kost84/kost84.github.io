@@ -1,0 +1,66 @@
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #111111; 
+    color: #d1d5db; 
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.6;
+    padding: 60px 20px;
+}
+
+.projets{
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 30px; 
+}
+
+.cartedeproject {
+    background-color: rgba(255, 255, 255, 0.02); 
+    border: 1px solid #333333; 
+    border-radius: 12px;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.text-project  h2 {
+    color: #ffffff;
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.text-project p {
+    color: #9ca3af;
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+.text-project  a {
+    color: #d1d5db;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    transition: color 0.2s ease;
+}
+
+.text-project  a:hover {
+    color: #4da6ff; 
+}
+
+.project-image img {
+    width: 280px; 
+    height: auto;
+    border-radius: 8px;
+    border: 1px solid #444; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    object-fit: cover;
+}
