@@ -1,49 +1,59 @@
-body  {
-    background-image: url(../imageetdoc/arriereplan/indexa.webp);
+body {
+    background-image: linear-gradient(rgba(17, 17, 17, 0.6), rgba(17, 17, 17, 0.8)), url(../imageetdoc/arriereplan/indexa.webp);
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: auto;
+    background-position: center;
+    background-attachment: fixed;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, sans-serif;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
 }
 
 .titre {
-    color: aliceblue;
-    font-size: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 35vh
-    
+    margin-bottom: 32px;
 }
 
-.paragrapheinfo1 {
-    color: aliceblue;
-    font-size: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: -60px;
+.titre h1 {
+    color: #ffffff;
+    font-size: 55px; 
+    font-weight: 600;
+    margin: 0;
+    letter-spacing: -1px;
 }
 
-.paragrapheinfo2 {
-    color: aliceblue;
-    font-size: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: -60px;
+
+.paragrapheinfo1 p, .paragrapheinfo2 p {
+    color: #a1a1aa;
+    font-size: 16px;
+    margin: 8px 0;
+    font-weight: 300;
 }
+
 
 .bouton-portfolio {
- display: block;
-    width: fit-content;
-    margin: 40px auto 0 auto;
-    padding: 15px 30px; 
-    background-color: transparent;
-    color: aliceblue;
-    font-size: 25px;
-    font-family: Arial, sans-serif; 
+    display: inline-block;
+    margin-top: 40px;
+    padding: 12px 25px; 
+    background-color: transparent; 
+    color: #ffffff; 
+    font-size: 15px;
     text-decoration: none; 
-    border: 2px solid aliceblue; 
+    border: 1px solid #0ea5e9; 
     border-radius: 8px; 
-    cursor: pointer;
+    box-shadow: 0 0 10px rgba(14, 165, 233, 0.2); 
+    transition: all 0.3s ease;
+}
+
+
+.bouton-portfolio:hover {
+    background-color: rgba(14, 165, 233, 0.1);
+    box-shadow: 0 0 20px rgba(14, 165, 233, 0.6);
 }
