@@ -1,0 +1,111 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #111111; 
+    color: #d1d5db; 
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.7;
+    padding: 60px 20px;
+}
+
+main {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 70px;
+}
+
+
+.acceuil h2 {
+    color: #4da6ff; 
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.paragraphacceuil p {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+
+.compétences {
+    text-align: center;
+}
+
+.compétences h2 {
+    color: #ffffff;
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+}
+
+.compétences h3 {
+    color: #9ca3af; 
+    font-size: 1rem;
+    font-weight: normal;
+    text-transform: capitalize;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.compétences p {
+    color: #ffffff;
+    font-size: 1.1rem;
+    word-spacing: 5px; 
+}
+
+.compétences ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.compétences ul li {
+    color: #ffffff;
+    font-size: 1.1rem;
+}
+
+.compétences ul li:not(:last-child)::after {
+    content: " • ";
+    color: #6b7280;
+    margin-left: 15px;
+}
+
+
+.expérience, .formation {
+    text-align: center;
+}
+
+.expérience h2, .formation h2 {
+    color: #ffffff;
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+    margin-top: 10px;
+}
+
+.expérience h3, .formation h3 {
+    color: #e5e7eb;
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-top: 30px;
+    margin-bottom: 5px;
+}
+
+.expérience p, .formation p {
+    color: #9ca3af;
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+
+br {
+    display: none; 
+}
