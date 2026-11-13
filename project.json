@@ -1,0 +1,16 @@
+[
+    {
+        "Titre": "Projet 1 - Racheter-Lioris-TP-Web",
+        "Contexte": "Context : Le Project avez pour but de crée une histoire en site web permtant une interaction via des bouton avec un systeme à choix .",
+        "Langage": "HTML/CSS",
+        "LienGithub": "https://github.com/kost84/Racheter-Lioris-TP-Web.git",
+        "Image" : "../imageetdoc/imageproject/image.png"
+    },
+    {
+        "Titre": "Project 2 - ProjetRed_CHAUDRON-VIVIEN",
+        "Contexte": "Context : Le Project à pour but de crée un jeux vidéo avec en Golang , l'histoire doit ce passer pendant un rêve fièvreu avec un systéme de choix via le Terminal , ce Project à été crée en groupe de 3 .",
+        "Langage": "Golang",
+        "LienGithub": "https://github.com/vivien-mp3/ProjetRed_CHAUDRON-VIVIEN.git",
+        "Image" : "../imageetdoc/imageproject/Capture d'écran 2026-11-09 163658.png"
+    }
+]
