@@ -14,6 +14,7 @@ import (
 type Projet struct {
 	Titre      string `json:"Titre"`
 	Contexte   string `json:"Contexte"`
+	Langage    string `json:"Langage"`
 	LienGithub string `json:"LienGithub"`
 	Image      string `json:"Image"`
 }
@@ -56,9 +57,6 @@ func acceuil(w http.ResponseWriter, r *http.Request){
 	renderPage(w, "acceuil.html",nil)
 }
 
-func project(w http.ResponseWriter, r *http.Request){
-	renderPage(w, "project.html",nil)
-}
 
 func contact(w http.ResponseWriter, r *http.Request){
 	renderPage(w, "contact.html",nil)
@@ -67,7 +65,7 @@ func contact(w http.ResponseWriter, r *http.Request){
 
 func project(w http.ResponseWriter, r *http.Request){
 
-	fichier, err := os.ReadFile("prokect.json")
+	fichier, err := os.ReadFile("project.json")
 	if err != nil {
 		http.Error(w, "Erreur de lecture du JSON", http.StatusInternalServerError)
 		return

@@ -12,7 +12,6 @@
          <h1>Project</h1>
          </header>
       <section class="presentationproject">
-
         {{range .}}
      <article class="cartedeproject">
           <section class="text-project">
@@ -24,21 +23,8 @@
               <section class="project-image">
               <img src="{{.Image}}" alt="Aperçu TP Web">
             </section>
+          </article>
             {{end}}
-
-            {{range .}}
-                <article class="cartedeproject">
-                 <section class="text-project">
-              <h2>{{.Titre}}</h2>
-              <p>Contexte :{{.Contexte}}</p>
-               <p>Code Utilisées : {{.Langage}}</p>
-               <p>Depôt Github : <a href="{{.LienGithub}}">ProjetRed</a></p>
-             </section>
-                 <section class="project-image">
-               <img src="{{.Image}}" alt="Aperçu ProjetRed">
-               </section>
-             </article>
-             {{end}}
          </section>
            <a  href="/contact" class="bouton-suivant">Continuer vers contact</a>
       </main>
