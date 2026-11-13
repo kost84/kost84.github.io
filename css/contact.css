@@ -1,0 +1,82 @@
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #111111;
+    color: #d1d5db;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+
+.headercontact h1 {
+    color: #ffffff;
+    font-size: 55px;
+    font-weight: 600;
+    margin-bottom: 50px;
+    letter-spacing: -1px;
+}
+
+
+.contact {
+    display: flex;
+    flex-direction: column;
+    gap: 25px; 
+    align-items: center;
+}
+
+
+.contact br {
+    display: none; 
+}
+
+
+.contact a {
+    display: inline-block;
+    width: 300px; 
+    padding: 16px 20px;
+    background-color: rgba(255, 255, 255, 0.03); 
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    border: 1px solid #333333; 
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+
+.contact a:hover {
+    border-color: #0ea5e9; 
+    background-color: rgba(14, 165, 233, 0.05); 
+    color: #0ea5e9; 
+    box-shadow: 0 0 15px rgba(14, 165, 233, 0.2); 
+    transform: translateY(-2px);
+}
+
+.contact a:last-child {
+    position: absolute;
+    top: 30px; 
+    right: 40px; 
+    width: auto; 
+    padding: 10px 20px;
+    font-size: 15px; 
+    border: 1px solid #333333; 
+    border-radius: 6px;
+}
