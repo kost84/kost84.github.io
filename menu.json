@@ -1,0 +1,30 @@
+[
+    {
+        "Titre": "Mon Portfolio",
+        "Description": "Portfolio complet : introduction, compétences backend (Go, HTML, CSS), projets et parcours.",
+        "Categorie": "Portfolio Web",
+        "Lien": "/portfolio",
+        "Image": "../imageetdoc/arriereplan/indexa.webp"
+    },
+    {
+        "Titre": "Projet 1 - TP Web",
+        "Description": "Histoire interactive en site web avec un système de boutons et de choix.",
+        "Categorie": "HTML / CSS",
+        "Lien": "https://github.com/kost84/Racheter-Lioris-TP-Web.git",
+        "Image": "../imageetdoc/imageproject/image.png"
+    },
+    {
+        "Titre": "Projet 2 - ProjetRed",
+        "Description": "Jeu vidéo d'aventure textuelle en Golang avec système de choix via le terminal.",
+        "Categorie": "Golang",
+        "Lien": "https://github.com/vivien-mp3/ProjetRed_CHAUDRON-VIVIEN.git",
+        "Image": "../imageetdoc/imageproject/Capture d'écran 2026-11-09 163658.png"
+    },
+    {
+        "Titre": "CreateNuclear (Mod Minecraft)",
+        "Description": "Développement de modding sous Minecraft Forge & NeoForge.",
+        "Categorie": "Modding Minecraft",
+        "Lien": "https://github.com/kost84",
+        "Image": "../imageetdoc/arriereplan/page2.webp"
+    }
+]

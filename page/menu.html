@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/menu.css">
+    <title>Menu Principal - Lioris Racheter</title>
+</head>
+<body>
+
+    <!-- Barre de navigation -->
+    <header class="navbar">
+        <div class="nav-brand">Lioris Racheter</div>
+        <nav class="nav-links">
+            <a href="/" class="active">Menu Principal</a>
+            <a href="/portfolio">Portfolio</a>
+            <a href="/project">Projets</a>
+            <a href="/contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Layout principal style Behance (Sidebar profil à gauche + Grille de cartes à droite) -->
+    <div class="behance-layout">
+
+        <!-- Colonne Profil (Sidebar Gauche) -->
+        <aside class="sidebar-profile">
+            <div class="profile-card">
+                <div class="profile-avatar">LR</div>
+                <h1 class="profile-name">Lioris Racheter</h1>
+                <p class="profile-sub">Étudiant B1 Informatique - Ynov</p>
+                <div class="profile-badge">
+                    <span class="status-indicator"></span> Backend & Modding
+                </div>
+            </div>
+
+            <div class="sidebar-box">
+                <h3>Accès rapide</h3>
+                <div class="sidebar-links">
+                    <a href="/portfolio" class="btn-sidebar">📄 Entrer dans le Portfolio</a>
+                    <a href="/project" class="btn-sidebar">📁 Liste des Projets</a>
+                    <a href="/contact" class="btn-sidebar">✉️ Me Contacter</a>
+                    <a href="https://github.com/kost84" target="_blank" class="btn-sidebar">🐙 Profil GitHub ↗</a>
+                </div>
+            </div>
+
+            <div class="sidebar-box">
+                <h3>Utilisation</h3>
+                <p class="sidebar-help">Cliquez sur une carte pour <strong>voir la capture en grand</strong> ou cliquez sur <strong>Accéder au projet / site</strong> pour y entrer directement.</p>
+            </div>
+        </aside>
+
+        <!-- Colonne Galerie / Cartes (Droite) -->
+        <main class="gallery-content">
+            <div class="gallery-header">
+                <h2>Menu & Réalisations</h2>
+                <span class="items-badge">{{len .}} éléments</span>
+            </div>
+
+            <!-- Grille de cartes -->
+            <section class="cards-grid">
+                {{range .}}
+                <article class="card-item"
+                         data-title="{{.Titre}}"
+                         data-image="{{.Image}}"
+                         data-description="{{.Description}}"
+                         data-categorie="{{.Categorie}}"
+                         data-lien="{{.Lien}}">
+
+                    <!-- Miniature cliquable pour ouvrir le screen -->
+                    <div class="card-thumb-wrapper" onclick="openScreenModal(this.closest('.card-item'))">
+                        <img src="{{.Image}}" alt="{{.Titre}}" class="card-thumb-img">
+                        <div class="card-thumb-overlay">
+                            <span>🔍 Agrandir le screen</span>
+                        </div>
+                    </div>
+
+                    <!-- Contenu textuel de la carte -->
+                    <div class="card-info">
+                        <div class="card-title-row">
+                            <h3 class="card-title">{{.Titre}}</h3>
+                            <span class="card-category-tag">{{.Categorie}}</span>
+                        </div>
+                        <p class="card-desc">{{.Description}}</p>
+
+                        <!-- Actions : Voir le screen ou Accéder au site -->
+                        <div class="card-buttons">
+                            <button type="button" class="btn-action btn-screen" onclick="openScreenModal(this.closest('.card-item'))">
+                                🖼️ Voir le screen
+                            </button>
+                            <a href="{{.Lien}}" class="btn-action btn-site">
+                                🌐 Accéder
+                            </a>
+                        </div>
+                    </div>
+
+                </article>
+                {{end}}
+            </section>
+        </main>
+
+    </div>
+
+    <!-- Modale Plein Écran (Lightbox style Behance) -->
+    <div id="screen-modal" class="modal-backdrop" style="display: none;" onclick="onModalBackdropClick(event)">
+        <div class="modal-window">
+            
+            <!-- Barre supérieure de la modale -->
+            <div class="modal-topbar">
+                <div class="modal-titles">
+                    <h2 id="modal-title">Titre</h2>
+                    <span id="modal-category" class="modal-badge-tag">Catégorie</span>
+                </div>
+                <div class="modal-buttons">
+                    <a id="modal-site-btn" href="#" class="btn-modal-link">
+                        🌐 Accéder ↗
+                    </a>
+                    <button type="button" class="btn-modal-close" onclick="closeScreenModal()" title="Fermer (Échap)">&times;</button>
+                </div>
+            </div>
+
+            <!-- Aperçu grand écran -->
+            <div class="modal-image-area">
+                <img id="modal-img" src="" alt="Capture d'écran plein écran">
+            </div>
+
+            <!-- Description contextuelle en bas -->
+            <div class="modal-bottombar">
+                <p id="modal-description" class="modal-desc-text"></p>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Script de gestion de la modale -->
+    <script>
+        function openScreenModal(cardElement) {
+            const title = cardElement.getAttribute('data-title');
+            const image = cardElement.getAttribute('data-image');
+            const desc = cardElement.getAttribute('data-description');
+            const cat = cardElement.getAttribute('data-categorie');
+            const lien = cardElement.getAttribute('data-lien');
+
+            document.getElementById('modal-title').textContent = title;
+            document.getElementById('modal-img').src = image;
+            document.getElementById('modal-description').textContent = desc;
+            document.getElementById('modal-category').textContent = cat;
+
+            const siteBtn = document.getElementById('modal-site-btn');
+            siteBtn.href = lien;
+
+            // Si c'est un lien externe, ouvrir dans un nouvel onglet
+            if (lien.startsWith('http')) {
+                siteBtn.setAttribute('target', '_blank');
+            } else {
+                siteBtn.removeAttribute('target');
+            }
+
+            const modal = document.getElementById('screen-modal');
+            modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeScreenModal() {
+            const modal = document.getElementById('screen-modal');
+            modal.style.display = 'none';
+            document.body.style.overflow = '';
+        }
+
+        function onModalBackdropClick(e) {
+            if (e.target.id === 'screen-modal') {
+                closeScreenModal();
+            }
+        }
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeScreenModal();
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,8 +1,6 @@
 package main
 
 import (
-
-	//"encoding/json"
 	"encoding/json"
 	"fmt"
 	"html/template"
@@ -19,17 +17,29 @@ type Projet struct {
 	Image      string `json:"Image"`
 }
 
+type MenuItem struct {
+	Titre       string `json:"Titre"`
+	Description string `json:"Description"`
+	Categorie   string `json:"Categorie"`
+	Lien        string `json:"Lien"`
+	Image       string `json:"Image"`
+}
+
 func main() {
 
 	http.Handle("/css/", http.StripPrefix("/css/", http.FileServer(http.Dir("css/"))))
 	http.Handle("/imageetdoc/", http.StripPrefix("/imageetdoc/", http.FileServer(http.Dir("imageetdoc/"))))
 
-	http.HandleFunc("/", index)
+	// La page Menu est maintenant la toute première page accessible sur "/"
+	http.HandleFunc("/", rootHandler)
+	http.HandleFunc("/menu", menuHandler)
+
+	// L'accès au Portfolio (page index.html)
+	http.HandleFunc("/portfolio", portfolioHandler)
+	http.HandleFunc("/index", portfolioHandler)
 
 	http.HandleFunc("/acceuil", acceuil)
-
 	http.HandleFunc("/project", project)
-
 	http.HandleFunc("/contact", contact)
 
 	fmt.Println("Serveur lancé à l'adresse suivante : http://localhost:8080")
@@ -39,32 +49,54 @@ func main() {
 		log.Fatal(err)
 	}
 }
-func renderPage(w http.ResponseWriter, tmpl string, data any) {
 
-	t, err := 	template.ParseFiles("page/" + tmpl)
-	if err != nil{
+func renderPage(w http.ResponseWriter, tmpl string, data any) {
+	t, err := template.ParseFiles("page/" + tmpl)
+	if err != nil {
 		http.Error(w, err.Error(), http.StatusAlreadyReported)
 		return
 	}
 	t.Execute(w, data)
 }
 
-func index(w http.ResponseWriter, r *http.Request){
+func rootHandler(w http.ResponseWriter, r *http.Request) {
+	if r.URL.Path != "/" {
+		http.NotFound(w, r)
+		return
+	}
+	menuHandler(w, r)
+}
+
+func menuHandler(w http.ResponseWriter, r *http.Request) {
+	fichier, err := os.ReadFile("menu.json")
+	if err != nil {
+		http.Error(w, "Erreur de lecture du JSON menu", http.StatusInternalServerError)
+		return
+	}
+
+	var items []MenuItem
+	err = json.Unmarshal(fichier, &items)
+	if err != nil {
+		http.Error(w, "Erreur de décodage JSON menu", http.StatusInternalServerError)
+		return
+	}
+
+	renderPage(w, "menu.html", items)
+}
+
+func portfolioHandler(w http.ResponseWriter, r *http.Request) {
 	renderPage(w, "index.html", nil)
 }
 
-func acceuil(w http.ResponseWriter, r *http.Request){
-	renderPage(w, "acceuil.html",nil)
+func acceuil(w http.ResponseWriter, r *http.Request) {
+	renderPage(w, "acceuil.html", nil)
 }
 
-
-func contact(w http.ResponseWriter, r *http.Request){
-	renderPage(w, "contact.html",nil)
+func contact(w http.ResponseWriter, r *http.Request) {
+	renderPage(w, "contact.html", nil)
 }
 
-
-func project(w http.ResponseWriter, r *http.Request){
-
+func project(w http.ResponseWriter, r *http.Request) {
 	fichier, err := os.ReadFile("project.json")
 	if err != nil {
 		http.Error(w, "Erreur de lecture du JSON", http.StatusInternalServerError)
@@ -80,5 +112,3 @@ func project(w http.ResponseWriter, r *http.Request){
 
 	renderPage(w, "project.html", mesProjects)
 }
-
-
