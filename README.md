@@ -1,4 +1,4 @@
-# 🌐 Portfolio & Hub de Projets - Lioris Racheter (Branche V2)
+# Portfolio & Hub de Projets - Lioris Racheter (Branche V2)
 
 [![Go Version](https://img.shields.io/badge/Go-1.27+-00ADD8?style=flat&logo=go)](https://go.dev/)
 [![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white)](https://developer.mozilla.org/fr/docs/Web/HTML)
@@ -11,7 +11,7 @@ Ce projet a pour objectif de présenter mon parcours, mes compétences technique
 
 ---
 
-## 🚀 Évolution vers la V2 (Serveur Web Dynamique en Go)
+##  Évolution vers la V2 (Serveur Web Dynamique en Go)
 
 La branche **V2** marque une étape majeure dans le développement du projet : le passage d'un site statique à une **application web dynamique propulsée par un serveur backend en Go (Golang)**.
 
@@ -24,7 +24,7 @@ La branche **V2** marque une étape majeure dans le développement du projet : l
 
 ---
 
-## 🤖 Mention concernant l'Assistance par IA
+##  Mention concernant l'Assistance par IA
 
 > [!NOTE]
 > **Utilisation de l'Intelligence Artificielle à des fins d'assistance CSS :**  
@@ -33,7 +33,7 @@ La branche **V2** marque une étape majeure dans le développement du projet : l
 
 ---
 
-## 📁 Structure du Projet
+## Structure du Projet
 
 ```text
 kost84.github.io/
@@ -64,7 +64,7 @@ kost84.github.io/
 
 ---
 
-## 🛠️ Technologies Utilisées
+## Technologies Utilisées
 
 | Domaine | Technologies |
 | :--- | :--- |
@@ -75,37 +75,7 @@ kost84.github.io/
 
 ---
 
-## 💻 Installation et Lancement Local
-
-### Prérequis
-- Avoir installé [Go](https://go.dev/dl/) sur sa machine (version 1.20 ou supérieure recommandée).
-- Avoir [Git](https://git-scm.com/) installé.
-
-### Étapes d'exécution
-
-1. **Cloner le dépôt :**
-   ```bash
-   git clone https://github.com/kost84/kost84.github.io.git
-   cd kost84.github.io
-   ```
-
-2. **Basculer sur la branche V2 :**
-   ```bash
-   git checkout V2
-   ```
-
-3. **Lancer le serveur Go :**
-   ```bash
-   go run main.go
-   ```
-
-4. **Accéder au site :**  
-   Ouvrez votre navigateur web à l'adresse suivante :  
-   👉 [http://localhost:8080](http://localhost:8080)
-
----
-
-## 📄 Routes & Pages Disponibles
+##  Routes & Pages Disponibles
 
 - **`/` ou `/menu`** : Menu principal interactif (style Behance) répertoriant les différentes sections.
 - **`/portfolio` ou `/index`** : Page de bienvenue et d'introduction au portfolio.
@@ -115,7 +85,7 @@ kost84.github.io/
 
 ---
 
-## 👤 Auteur
+## Auteur
 
 - **Lioris Racheter** ([@kost84](https://github.com/kost84))
 - Étudiant en Bachelor 1 Informatique — Ynov Campus Aix-en-Provence
